@@ -1,0 +1,39 @@
+replicaCount: 5
+
+image:
+  repository: glebivanov1971/neoflex_project1
+  tag: task2.1maven
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 8080
+  nodePort: 32000
+
+serviceAccount:
+  create: true
+  name: ""  
+
+ingress:
+  enabled: false  
+  annotations: {}
+  path: /
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+autoscaling:
+  enabled: false  
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80  
