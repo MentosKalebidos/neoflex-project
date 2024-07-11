@@ -1,4 +1,4 @@
-replicaCount: 9
+replicaCount: 5
 
 image:
   repository: glebivanov1971/neoflex_project1
